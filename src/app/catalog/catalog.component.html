@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [class.blur]="isDeleteConfirm">
     <div class="row">
         <h2>Library Catalogue</h2>
     </div>
@@ -54,7 +54,7 @@
                                          dataItem.Type=='Journal'?'/editjournal/'+dataItem.Id:    
                                          dataItem.Type=='Brochure'?'/editbrochure/'+dataItem.Id: '/' ">Edit</a> |
                         <a [routerLink]="'/details/'+dataItem.Id">Details</a> |
-                        <a href="javascript:void(0)" (click)="deleAsset(dataItem.Id)">Delete</a>
+                        <a href="javascript:void(0)" (click)="deleteConfirm(dataItem)">Delete</a>
                         
                     </ng-template>
                 </kendo-grid-column>
@@ -62,3 +62,10 @@
         </div>
     </div>
 </div>
+
+<app-delete-confirm 
+        [isShow]="isDeleteConfirm"
+        [deleteItem]="deleteItem"
+        [imagesPath]="imagesPath"
+        (onDelete)="deleteConfirmed($event)"
+></app-delete-confirm>

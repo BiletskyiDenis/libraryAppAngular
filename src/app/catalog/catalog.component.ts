@@ -18,13 +18,18 @@ export class CatalogComponent {
     private gridView: GridDataResult;
     private gridData: IAssetListItem[] = [];
 
+
+
     private selectedItems: number[] = [];
     private pageSize: number = 10;
     private skip: number = 0;
 
     imageSmallNoneUrl: string;
-
     imagesPath: string;
+
+    deleteItem: IAssetListItem;
+    deleteImgUrl:string;
+    isDeleteConfirm: boolean;
 
 
 
@@ -59,6 +64,19 @@ export class CatalogComponent {
                 this.gridData = this.resourceService.get('assetsList');
             }
         )
+    }
+
+    deleteConfirm(item:IAssetListItem, img:string){
+        this.deleteItem=item;
+        this.deleteImgUrl=img;
+        this.isDeleteConfirm=true;
+    }
+
+    deleteConfirmed(event: boolean) {
+        if (event) {
+            this.deleAsset(this.deleteItem.Id);
+        }
+        this.isDeleteConfirm=false;
     }
 
     deleAsset(id: number): void {
@@ -109,8 +127,8 @@ export class CatalogComponent {
         }
     }
 
-    getSelectedData(type:string){
-       this.libraryService.downloadSelected(this.selectedItems, type);
+    getSelectedData(type: string) {
+        this.libraryService.downloadSelected(this.selectedItems, type);
     }
 
 }

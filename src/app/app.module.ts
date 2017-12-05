@@ -26,7 +26,8 @@ import { ImageSelectorComponent } from './components/image-selector/image-select
 import { AssetBookComponent } from './assets/asset-book/asset-book.component';
 import { AssetJournalComponent } from './assets/asset-journal/asset-journal.component';
 import { AssetBroshoreComponent } from './assets/asset-broshore/asset-broshore.component';
-import { DetailsComponent } from './details/details.component'
+import { DetailsComponent } from './details/details.component';
+import { DeleteConfirmComponent } from './components/delete-confirm/delete-confirm.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { DetailsComponent } from './details/details.component'
     AssetBookComponent,
     AssetJournalComponent,
     AssetBroshoreComponent,
-    DetailsComponent
+    DetailsComponent,
+    DeleteConfirmComponent
   ],
   imports: [
     BrowserModule,
