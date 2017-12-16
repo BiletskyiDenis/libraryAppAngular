@@ -35,7 +35,7 @@ export class DetailsComponent implements OnInit {
 
   details: IDetails = {
     Author: '', Country: '', Description: '', Frequency: '', Genre: '', Id: 0, ISBN: '',
-    ImageUrl: '', Language: '', NumberOfCopies: 0, Pages: 0, Price: 0, Publisher: '',
+    ImageUrl: '', Language: '', NumbersOfCopies: 0, Pages: 0, Price: 0, Publisher: '',
     Title: '', Type: '', Year: 0
   };
 

@@ -14,5 +14,5 @@ export interface IDetails {
     Pages: number;
     Price: number;
     Frequency: string;
-    NumberOfCopies: number;
+    NumbersOfCopies: number;
 }

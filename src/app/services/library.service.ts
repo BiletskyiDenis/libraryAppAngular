@@ -96,7 +96,6 @@ export class LibraryService {
         return this._http.delete(this.host + '/api/Asset/' + id);
     }
 
-
     assetHandler(data: FormData, apiUrl: string, httpType: string) {
         let url: string = this.host + apiUrl;
         let xhr: XMLHttpRequest = new XMLHttpRequest();
@@ -123,7 +122,6 @@ export class LibraryService {
         var dataFile = { id: id, type: type };
        this.downloadData(dataFile,'/api/DownloadSelected');
     }
-
 
     downloadData(data, apiUrl) {
         var xhr = new XMLHttpRequest();
